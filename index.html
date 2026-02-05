@@ -156,10 +156,10 @@
     <div class="question" id="question"></div>
     <img src="" class="sticker hidden" id="sticker" />
     <div class="final hidden" id="final">I will always love you 🖤 iqbal</div>
-    <button id="nextBtn"> 🖤 </button>
+    <button id="nextBtn" value="PLAY"> 🖤 </button>
   </div>
 
-<audio src="https://audio.jukehost.co.uk/pjfWOcVnCvFBmMe3RZHZxTaUPmduZDi2" autoplay controls></audio>
+<audio id="audio" value="PLAY" src="https://audio.jukehost.co.uk/pjfWOcVnCvFBmMe3RZHZxTaUPmduZDi2" controls></audio>
 
 <script>
   const questions = [
@@ -185,6 +185,8 @@
   const nextBtn = document.getElementById('nextBtn');
 
   function showStep() {
+    var audio = document.getElementById("audio");
+        audio.play();
     if (step < questions.length) {
       questionEl.textContent = questions[step];
       stickerEl.src = stickers[step];
